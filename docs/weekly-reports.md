@@ -1,9 +1,8 @@
 # Week 3 (10/12/2026-10/18/2026)
 **Planning and Progress Tracking**:
-1. [done] Person: Task (Links to PR)
-2. [not started] Person: Task (Links to PR)
-3. [80% done] Person: Task (Links to PR)
-4. etc.
+1. [done] Person: Whole Team; Task: Setting up repo and communicating plan for the project
+2. [not started] Person: Whole Team; Task: Meeting with Professor Yiji
+3. [not started] Person: Whole Team; Task: Specific work delegations
 
 # Week 4 (10/19/2026-10/25/2026)
 **Planning and Progress Tracking**:
