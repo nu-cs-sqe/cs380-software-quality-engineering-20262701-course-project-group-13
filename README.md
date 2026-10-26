@@ -2,7 +2,7 @@
 
 ## Contributors
 - Pranav Kota
-- PERSON
+- Evan Liang
 
 ## Dependencies
 - JDK 11
