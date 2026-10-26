@@ -2,7 +2,7 @@
 
 ## Contributors
 - Pranav Kota
-- PERSON
+- Rohan Sekhar
 
 ## Dependencies
 - JDK 11
