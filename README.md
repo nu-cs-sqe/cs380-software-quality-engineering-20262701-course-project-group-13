@@ -4,6 +4,7 @@
 ## Contributors
 - Pranav Kota
 - Evan Liang
+- Rohan Sekhar
 
 ## Dependencies
 - JDK 11
