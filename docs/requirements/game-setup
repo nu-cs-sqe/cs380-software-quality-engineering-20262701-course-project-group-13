@@ -1,0 +1,63 @@
+# Chess Game Requirements
+
+## 1. Start a New Game
+
+**User story**
+
+As a chess player, I want to start a new game with the board already set up so I can begin playing right away.
+
+**Acceptance criteria**
+
+- Starting a new game displays an 8×8 chessboard.
+- Each square occupied in the standard chess starting position contains the correct piece type and color. Every other square is empty.
+- White is the active player, and the game displays “White to move” before the first move.
+
+## 2. Make a Move
+
+**User story**
+
+As a chess player, I want to select and move one of my pieces so I can take my turn.
+
+**Acceptance criteria**
+
+- Clicking one of the active player’s pieces highlights it to show that it is selected. The player cannot select an opponent’s piece as the piece to move.
+- Clicking a legal, empty destination moves the selected piece there and empties its original square.
+- For a standard capture, clicking a legal destination occupied by an opponent’s piece removes that piece and moves the selected piece to its square.
+- After a legal move is completed, the turn passes to the other player and the turn indicator updates if the game is still active.
+- If the player attempts an illegal move, the board and active player stay the same.
+
+## 3. Use Special Moves
+
+**User story**
+
+As a chess player, I want to castle, capture en passant, and promote pawns so I can play those moves when the rules allow them.
+
+**Acceptance criteria**
+
+- When a player castles legally, the king and rook move to their correct squares as part of a single turn. Castling is allowed only if neither piece has moved, the squares between them are empty, and the king is not in check and does not pass through or land on an attacked square.
+- When a player captures en passant, their pawn moves diagonally to the empty destination square and the opponent’s pawn is removed from the square it occupies. This move is available only immediately after the opponent’s pawn advances two squares and lands beside the capturing pawn.
+- When a pawn reaches the opposite end of the board, the player chooses a queen, rook, bishop, or knight of their own color. The chosen piece replaces the pawn before the turn passes.
+
+## 4. Respond to Check
+
+**User story**
+
+As a chess player, I want to know when my king is in check so I can respond with a legal move.
+
+**Acceptance criteria**
+
+- If the active player’s king is in check and the game is still active, the game displays that the player is in check.
+- The game rejects any move that would put or leave the moving player’s own king in check.
+- If the player makes a legal move that resolves the check, the turn passes to the other player and the game updates the check indicator to reflect the new position.
+
+## 5. See the Game Result
+
+**User story**
+
+As a chess player, I want to see the result when the game ends so I know who won or whether the game was a draw.
+
+**Acceptance criteria**
+
+- If the player to move is in check and has no legal moves, the game displays checkmate and identifies the other player as the winner.
+- If the player to move is out of check and has no legal moves, the game displays a draw by stalemate.
+- Once the game ends, neither player can make another move on that board.
