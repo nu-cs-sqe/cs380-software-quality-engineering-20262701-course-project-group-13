@@ -1,0 +1,13 @@
+4.2 Chess Game Setup Methods
+Class	Java signature	What it does
+Game	void startNewGame()	Creates a fresh Board, sets up the pieces, and sets the active color to WHITE.
+Game	Board getBoard()	Returns the current board so the GUI can display it.
+Game	Color getActiveColor()	Returns the color whose turn it is.
+Board	void setupStartingPosition()	Places all 32 pieces on their starting squares on a fresh board.
+Board	Piece getPieceAt(int row, int col)	Returns the piece on the given square, or null if it’s empty.
+Piece	Piece(PieceType type, Color color)	Constructor that creates a piece with a type and color.
+Piece	PieceType getType()	Returns the kind of piece, such as KNIGHT.
+Piece	Color getColor()	Returns the piece’s color, WHITE or BLACK.
+GUI	void handleNewGame()	Handles the New Game click by starting the game, rendering the board, and updating the turn label.
+GUI	void renderBoard(Board board)	Reads all 64 squares and displays the appropriate piece icon or an empty square.
+GUI	void updateTurnLabel(Color activeColor)	Updates the label to show whose turn it is.
