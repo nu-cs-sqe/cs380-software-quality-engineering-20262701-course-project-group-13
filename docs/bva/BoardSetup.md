@@ -32,6 +32,7 @@ row or column throws `IndexOutOfBoundsException`.
 | ID | State before call | Expected state after call | Implemented? |
 | --- | --- | --- | --- |
 | B15 | Fresh, empty `Board` | All 64 squares match the layout below | No |
+| B16 | Fresh, empty `Board` | After setup, row `1` contains a black pawn in every column | No |
 
 Check the resulting state with `getPieceAt(row, col)`. Pieces in each
 back rank are listed from column `0` to column `7`.
