@@ -25,18 +25,18 @@ row or column throws `IndexOutOfBoundsException`.
 | B11 | `(3, 7)` | Returns `null` | Yes |
 | B12 | `(3, 8)` | Throws `IndexOutOfBoundsException` | Yes |
 | B13 | `(3, 3)` | Returns `null` | Yes |
-| B14 | `(0, 0)` after `setupStartingPosition()` | Returns a black rook | No |
+| B14 | `(0, 0)` after `setupStartingPosition()` | Returns a black rook | Yes |
 
 ## `setupStartingPosition()`
 
 | ID | State before call | Expected state after call | Implemented? |
 | --- | --- | --- | --- |
-| B15 | Fresh, empty `Board` | All 64 squares match the layout below | No |
+| B15 | Fresh, empty `Board` | All 64 squares match the layout below | Yes |
 | B16 | Fresh, empty `Board` | After setup, row `1` contains a black pawn in every column | Yes |
-| B17 | Fresh, empty `Board` | After setup, row `0` contains a black rook, knight, bishop, queen, king, bishop, knight, rook in columns `0` through `7` | No |
-| B18 | Fresh, empty `Board` | After setup, row `7` contains a white rook, knight, bishop, queen, king, bishop, knight, rook in columns `0` through `7` | No |
+| B17 | Fresh, empty `Board` | After setup, row `0` contains a black rook, knight, bishop, queen, king, bishop, knight, rook in columns `0` through `7` | Yes |
+| B18 | Fresh, empty `Board` | After setup, row `7` contains a white rook, knight, bishop, queen, king, bishop, knight, rook in columns `0` through `7` | Yes |
 | B19 | Fresh, empty `Board` | After setup, row `6` contains a white pawn in every column | Yes |
-| B20 | Fresh, empty `Board` | After setup, all 32 squares in rows `2` through `5` are empty | No |
+| B20 | Fresh, empty `Board` | After setup, all 32 squares in rows `2` through `5` are empty | Yes |
 
 `Yes` means the corresponding automated test is implemented and passes.
 `No` means verification is pending or failing.
@@ -48,10 +48,10 @@ row or column throws `IndexOutOfBoundsException`.
 | B01 | `rejectsRowBelowZero` | Row below the board |
 | B06, B07, B12 | `rejectsOutOfBoundsCoordinates` | Other out-of-range boundaries |
 | B02-B05, B08-B11, B13 | `returnsNullForEmptySquares` | Valid coordinate boundaries on a fresh board |
-| B14, B17, B18 | `placesBackRankPieces` (planned) | All 16 back-rank squares, including the black rook at `(0, 0)` |
+| B14, B17, B18 | `placesBackRankPieces` | All 16 back-rank squares, including the black rook at `(0, 0)` |
 | B16 | `placesBlackPawnsOnRowOne` | All 8 black-pawn squares |
 | B19 | `placesWhitePawnsOnRowSix` | All 8 white-pawn squares |
-| B20 | `leavesMiddleRowsEmptyAfterSetup` (planned) | All 32 middle squares after setup |
+| B20 | `leavesMiddleRowsEmptyAfterSetup` | All 32 middle squares after setup |
 | B15 | The two pawn methods, `placesBackRankPieces`, and `leavesMiddleRowsEmptyAfterSetup` | Together verify all 64 squares after setup |
 
 Check the resulting state with `getPieceAt(row, col)`. Pieces in each
