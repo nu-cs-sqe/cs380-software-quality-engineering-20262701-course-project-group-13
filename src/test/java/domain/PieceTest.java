@@ -2,31 +2,24 @@ package domain;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PieceTest {
     @Test
-    void retainsNullTypeAndSuppliedColor() {
-        Piece piece = new Piece(null, Color.BLACK);
-
-        assertNull(piece.getType());
-        assertEquals(Color.BLACK, piece.getColor());
+    void rejectsNullType() {
+        assertThrows(NullPointerException.class,
+                () -> new Piece(null, Color.BLACK));
     }
 
     @Test
-    void retainsSuppliedTypeAndNullColor() {
-        Piece piece = new Piece(PieceType.PAWN, null);
-
-        assertEquals(PieceType.PAWN, piece.getType());
-        assertNull(piece.getColor());
+    void rejectsNullColor() {
+        assertThrows(NullPointerException.class,
+                () -> new Piece(PieceType.PAWN, null));
     }
 
     @Test
-    void retainsBothNullArguments() {
-        Piece piece = new Piece(null, null);
-
-        assertNull(piece.getType());
-        assertNull(piece.getColor());
+    void rejectsBothNullArguments() {
+        assertThrows(NullPointerException.class,
+                () -> new Piece(null, null));
     }
 }

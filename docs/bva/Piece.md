@@ -2,18 +2,18 @@
 
 ## Methods under test
 
-- `Piece(PieceType type, Color color)` constructs a piece with the supplied values.
+- `Piece(PieceType type, Color color)` constructs a piece with non-null values,
+  or throws `NullPointerException` if either argument is null.
 - `getType()` returns the type supplied to the constructor.
 - `getColor()` returns the color supplied to the constructor.
 
-Each case constructs a new `Piece` and checks both getters. The constructor
-completes without throwing. There is no prior piece state or public mutation.
+Each valid case constructs a new `Piece` and checks both getters. Invalid
+cases check that construction throws; no piece is returned and getters are
+not called. There is no prior piece state or public mutation.
 
 `PieceType` and `Color` are finite enum domains, so numeric boundaries do not
 apply. The cases cover every current non-null type/color combination and the
-three null-input combinations. The current implementation accepts null values
-and returns them unchanged; it does not validate the constructor arguments.
-These cases document existing behavior rather than introduce new validation.
+three null-input combinations. A chess piece requires both a type and a color.
 
 ## Cases and automated test mapping
 
@@ -36,12 +36,20 @@ null-input cases are exercised directly in `PieceTest`.
 | P10 | `(QUEEN, WHITE)` | `QUEEN` | `WHITE` | Yes | `BoardTest.placesBackRankPieces`, row `7`, column `3` |
 | P11 | `(KING, BLACK)` | `KING` | `BLACK` | Yes | `BoardTest.placesBackRankPieces`, row `0`, column `4` |
 | P12 | `(KING, WHITE)` | `KING` | `WHITE` | Yes | `BoardTest.placesBackRankPieces`, row `7`, column `4` |
-| P13 | `(null, BLACK)` | `null` | `BLACK` | Yes | `PieceTest.retainsNullTypeAndSuppliedColor` |
-| P14 | `(PAWN, null)` | `PAWN` | `null` | Yes | `PieceTest.retainsSuppliedTypeAndNullColor` |
-| P15 | `(null, null)` | `null` | `null` | Yes | `PieceTest.retainsBothNullArguments` |
+
+### Invalid constructor arguments
+
+| ID | Constructor input `(type, color)` | Expected result | Implemented? | Automated test |
+| --- | --- | --- | --- | --- |
+| P13 | `(null, BLACK)` | Throws `NullPointerException` | No | `PieceTest.rejectsNullType` |
+| P14 | `(PAWN, null)` | Throws `NullPointerException` | No | `PieceTest.rejectsNullColor` |
+| P15 | `(null, null)` | Throws `NullPointerException` | No | `PieceTest.rejectsBothNullArguments` |
+
+`No` means verification is pending or failing.
 
 ## Development history
 
-This analysis and the direct null-input tests were added after `Piece` was
-implemented. They verify existing behavior and do not establish test-first
-development for the original class.
+The original analysis and null-acceptance tests were added after `Piece` was
+implemented. Null rejection is a separate contract change with failing tests
+added before validation. This does not establish test-first development for
+the original class.
