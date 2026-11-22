@@ -41,9 +41,9 @@ null-input cases are exercised directly in `PieceTest`.
 
 | ID | Constructor input `(type, color)` | Expected result | Implemented? | Automated test |
 | --- | --- | --- | --- | --- |
-| P13 | `(null, BLACK)` | Throws `NullPointerException` | No | `PieceTest.rejectsNullType` |
-| P14 | `(PAWN, null)` | Throws `NullPointerException` | No | `PieceTest.rejectsNullColor` |
-| P15 | `(null, null)` | Throws `NullPointerException` | No | `PieceTest.rejectsBothNullArguments` |
+| P13 | `(null, BLACK)` | Throws `NullPointerException` | Yes | `PieceTest.rejectsNullType` |
+| P14 | `(PAWN, null)` | Throws `NullPointerException` | Yes | `PieceTest.rejectsNullColor` |
+| P15 | `(null, null)` | Throws `NullPointerException` | Yes | `PieceTest.rejectsBothNullArguments` |
 
 `No` means verification is pending or failing.
 
