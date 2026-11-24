@@ -27,9 +27,9 @@ rook `(7, 7)`.
 
 | ID | Method(s) under test | State of the system | Expected output | Implemented? | Automated test |
 | --- | --- | --- | --- | --- | --- |
-| G01 | `Game()`, `getBoard()` | A newly constructed `Game` | Returns a non-null `Board` | No | `GameTest.constructorCreatesBoard` |
-| G02 | `Game()`, `getActiveColor()` | A newly constructed `Game` | Returns `Color.WHITE` | No | `GameTest.newGameStartsWithWhite` |
-| G03 | `getBoard()` | `getBoard()` called twice with no `startNewGame()` between | Both calls return the same non-null `Board` instance | No | `GameTest.getBoardReturnsSameInstance` |
-| G04 | `startNewGame()`, `getBoard()` | `startNewGame()` called on an initialized `Game` | `getBoard()` returns a different `Board` instance than before | No | `GameTest.startNewGameReplacesBoard` |
-| G05 | `Game()`, `startNewGame()`, `getBoard()` | A new `Game`, and a `Game` after `startNewGame()` | Board matches the standard starting position at the representative squares | No | `GameTest.constructorSetsUpStartingPosition`, `GameTest.startNewGameSetsUpStartingPosition` |
-| G06 | `startNewGame()`, `getBoard()`, `getActiveColor()` | `startNewGame()` called several times in a row | Each call gives a new, initialized `Board`, and `WHITE` is active after each call | No | `GameTest.repeatedStartNewGameResetsEachTime` |
+| G01 | `Game()`, `getBoard()` | A newly constructed `Game` | Returns a non-null `Board` | Yes | `GameTest.constructorCreatesBoard` |
+| G02 | `Game()`, `getActiveColor()` | A newly constructed `Game` | Returns `Color.WHITE` | Yes | `GameTest.newGameStartsWithWhite` |
+| G03 | `getBoard()` | `getBoard()` called twice with no `startNewGame()` between | Both calls return the same non-null `Board` instance | Yes | `GameTest.getBoardReturnsSameInstance` |
+| G04 | `startNewGame()`, `getBoard()` | `startNewGame()` called on an initialized `Game` | `getBoard()` returns a different `Board` instance than before | Yes | `GameTest.startNewGameReplacesBoard` |
+| G05 | `Game()`, `startNewGame()`, `getBoard()` | A new `Game`, and a `Game` after `startNewGame()` | Board matches the standard starting position at the representative squares | Yes | `GameTest.constructorSetsUpStartingPosition`, `GameTest.startNewGameSetsUpStartingPosition` |
+| G06 | `startNewGame()`, `getBoard()`, `getActiveColor()` | `startNewGame()` called several times in a row | Each call gives a new, initialized `Board`, and `WHITE` is active after each call | Yes | `GameTest.repeatedStartNewGameResetsEachTime` |
