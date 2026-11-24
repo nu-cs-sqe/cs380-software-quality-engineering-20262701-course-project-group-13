@@ -1,9 +1,10 @@
-# Group 13 Project
+# Chess
 ![Gradle Build](https://github.com/nu-cs-sqe/cs380-software-quality-engineering-20262701-course-project-group-13/actions/workflows/main.yml/badge.svg)
 
 ## Contributors
 - Pranav Kota
 - Evan Liang
+- Rohan Sekhar
 
 ## Dependencies
 - JDK 11
